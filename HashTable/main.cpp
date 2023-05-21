@@ -146,7 +146,14 @@ public:
                 Node * current = this->table[i];
                 
                 while (current != NULL) {
-                    std::cout << current->student->id << " at position " << i << std::endl;
+                    Student * student = current->student;
+                    
+                    std::cout << "---------------------------" << std::endl;
+                    std::cout << "ID: " << student->id << std::endl;
+                    std::cout << "Name: " << student->first_name << " " << student->last_name << std::endl;
+                    std::cout << "GPA: " << std::setprecision(2) << std::fixed << student->gpa << std::endl;
+                    std::cout << "---------------------------" << std::endl;
+
                     current = current->next;
                 }
             }
