@@ -7,6 +7,10 @@
 
 #include <iostream>
 
+void generateRandomStudent() {
+    
+}
+
 class Student {
 public:
     int id;
