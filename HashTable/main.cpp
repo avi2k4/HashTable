@@ -269,16 +269,17 @@ void generateRandomStudentsAndInsert(HashTable * table, int count) {
     }
     
     char first_name[NAME_SIZE];
-    while (!first_names_file.eof()) {
-        std::cout << "bro" << std::endl;
-        first_names_file >> first_name;
-        std::cout << first_name << std::endl;
-        first_names.push_back(first_name);
+    while (first_names_file >> first_name) {
+        char * copy = new char[NAME_SIZE];
+        strcpy(copy, first_name);
+        first_names.push_back(copy);
     }
     
     char last_name[NAME_SIZE];
     while (last_names_file >> last_name) {
-        last_names.push_back(last_name);
+        char * copy = new char[NAME_SIZE];
+        strcpy(copy, last_name);
+        last_names.push_back(copy);
     }
 
     // Iterate over count of students to be generated, create new student, and insert
